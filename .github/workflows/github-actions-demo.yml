@@ -1,0 +1,23 @@
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: php-actions/composer@v6
+
+      - name: PHPUnit Tests
+        uses: php-actions/phpunit@master
+        env:
+          TEST_NAME: Scarlett
+        with:
+          version: 9.6
+          bootstrap: tst/Bootstrap.php
+          configuration: phpunit.xml
+          args: --coverage-text
+          php_extensions: "gd"
