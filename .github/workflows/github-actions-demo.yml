@@ -19,15 +19,8 @@ jobs:
           version: 9.6
           bootstrap: tst/Bootstrap.php
           configuration: phpunit.xml
-          args: --coverage-text
-          php_extensions: "gd"
-
-
-      - name: PHPUnit tests
-        uses: php-actions/phpunit@v3
-        with:
-          php_extensions: "xdebug"
-          coverage_clover: "coverage/clover.xml"
+          php_extensions: "gd xdebug"
+          coverage_cobertura: "coverage/cobertura.xml"
 
       - name: Code Coverage Report
         uses: irongut/CodeCoverageSummary@v1.3.0
