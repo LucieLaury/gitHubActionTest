@@ -21,10 +21,6 @@ jobs:
           configuration: phpunit.xml
           args: --coverage-text
           php_extensions: "gd"
-
-      - name: Code Coverage Summary Report
-        uses: irongut/CodeCoverageSummary@v1.3.0
-        with:
           filename: coverage.cobertura.xml
 
       - name: Code Coverage Report
