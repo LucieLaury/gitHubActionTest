@@ -19,7 +19,7 @@ jobs:
           version: 9.6
           bootstrap: tst/Bootstrap.php
           configuration: phpunit.xml
-          args: --coverage-cobertura
+          args: --coverage-text
           php_extensions: "gd"
 
       - name: Code Coverage Report
