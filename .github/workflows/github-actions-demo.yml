@@ -34,3 +34,13 @@ jobs:
           indicators: true
           output: both
           thresholds: '60 80'
+
+      - name: Composer install
+        uses: php-actions/composer@v6
+
+      - name: PHP Code Sniffer
+        uses: php-actions/phpcs@v1
+        with:
+          php_version: 8.1
+          path: src/
+          standard: phpcs.xml
